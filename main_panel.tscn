@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://lpuiqowhunv0"]
+
+[ext_resource type="Script" uid="uid://lwqyojgjsn7f" path="res://main_panel.gd" id="1_0oxsh"]
+[ext_resource type="PackedScene" uid="uid://bej07ocd6ksde" path="res://components/author_line.tscn" id="2_pdekv"]
+
+[node name="MainPanel" type="TabContainer" unique_id=1721346261]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+script = ExtResource("1_0oxsh")
+
+[node name="ModSettings" type="PanelContainer" parent="." unique_id=245350328]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ModSettings" unique_id=1635719110]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModSettings/MarginContainer" unique_id=1579582354]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=482018888]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Mod Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=1807308219]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=1043878764]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=374766033]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=1943200960]
+layout_mode = 2
+
+[node name="ModPathButton" type="Button" parent="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=671611506]
+layout_mode = 2
+text = "Choose Path..."
+
+[node name="FilePathDisplay" type="LineEdit" parent="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=348421551]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Path to Mod Directory"
+editable = false
+
+[node name="ExportButton" type="Button" parent="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1803340439]
+layout_mode = 2
+text = "Export"
+
+[node name="ImportButton" type="Button" parent="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1571314668]
+layout_mode = 2
+text = "Load"
+
+[node name="HSeparator7" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=1846021495]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=1241368513]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ModSettings/MarginContainer/VBoxContainer" unique_id=2048539970]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer" unique_id=523697753]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HFlowContainer" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=556387812]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=316408404]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Mod ID/Domain Name"
+
+[node name="DomainNameInput" type="LineEdit" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=2030049808]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Mod Domain"
+
+[node name="HSeparator9" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=328993110]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=111790397]
+layout_mode = 2
+
+[node name="Label3" type="RichTextLabel" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=158394264]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "Mod Version    [url=\"https://semver.org\"]Formatting Help[/url]
+"
+fit_content = true
+
+[node name="VersionInput" type="LineEdit" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=1596813464]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "\"1.1.1\""
+
+[node name="HSeparator10" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=72768378]
+layout_mode = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1418015072]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HFlowContainer2" unique_id=1908251873]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Human-Readable Mod Name"
+
+[node name="PrettyNameInput" type="LineEdit" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HFlowContainer2" unique_id=712485965]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Mod Name"
+
+[node name="HSeparator11" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=15998316]
+layout_mode = 2
+
+[node name="VFlowContainer" type="VBoxContainer" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1357766978]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VFlowContainer" unique_id=698909993]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Mod Description"
+
+[node name="DescriptionInput" type="LineEdit" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VFlowContainer" unique_id=364288858]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+placeholder_text = "Mod Description"
+
+[node name="HSeparator12" type="HSeparator" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=240141226]
+layout_mode = 2
+
+[node name="AuthorSection" type="VBoxContainer" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1351216479]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/AuthorSection" unique_id=495337244]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Authors"
+
+[node name="DefaultAuthorLine" parent="ModSettings/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/AuthorSection" unique_id=304042695 instance=ExtResource("2_pdekv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TraitMods" type="PanelContainer" parent="." unique_id=848453111]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TraitMods" unique_id=1626572694]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TraitMods/MarginContainer" unique_id=757454739]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=9238733]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Custom Traits"
+
+[node name="HSeparator2" type="HSeparator" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=1168454732]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=687108610]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TraitMods/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1544303928]
+layout_mode = 2
+
+[node name="ClassMods" type="PanelContainer" parent="." unique_id=1617076522]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ClassMods" unique_id=1903715892]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ClassMods/VBoxContainer" unique_id=25611610]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "Custom Classes"
+
+[node name="HSeparator2" type="HSeparator" parent="ClassMods/VBoxContainer" unique_id=780102315]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ClassMods/VBoxContainer" unique_id=919526888]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ClassMods/VBoxContainer/ScrollContainer" unique_id=1748840946]
+layout_mode = 2
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1409104576]
+unique_name_in_owner = true
+title = "Open a File or Directory"
+file_mode = 3
+access = 2
+
+[connection signal="pressed" from="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2/ModPathButton" to="." method="_on_mod_path_button_pressed"]
+[connection signal="pressed" from="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2/ExportButton" to="." method="_on_export_button_pressed"]
+[connection signal="pressed" from="ModSettings/MarginContainer/VBoxContainer/HBoxContainer2/ImportButton" to="." method="_on_import_button_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
