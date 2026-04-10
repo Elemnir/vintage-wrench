@@ -16,18 +16,23 @@ func export():
 		"type": "content",
 		"modid": %DomainNameInput.text,
 		"name": %PrettyNameInput.text,
+		"authors": get_author_data(),
 		"description": %DescriptionInput.text,
 		"version": %VersionInput.text,
 	}
+	FileAccess.open(
+		%FilePathDisplay.text + MODINFO_NAME, FileAccess.WRITE
+	).store_string(JSON.stringify(modinfo_data, "  "))
 
 
 func import():
 	pass
 
-func get_author_data()-> Array[String]:
-	var rval = []
+func get_author_data() -> Array[String]:
+	var rval: Array[String] = []
 	for line in author_lines:
-		rval.append(line.)
+		rval.append(line.get_author_name())
+	return rval
 
 #region Signal Callbacks
 func _on_author_add():
