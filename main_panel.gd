@@ -5,6 +5,8 @@ const MODINFO_NAME = "modinfo.json"
 
 @onready var author_section = %AuthorSection
 @onready var author_lines: Array[AuthorLine] = [%DefaultAuthorLine]
+@onready var file_path_disp = %FilePathDisplay
+
 
 func _ready():
 	%DefaultAuthorLine.add_pressed.connect(_on_author_add)
@@ -12,6 +14,33 @@ func _ready():
 	
 
 func export():
+	var domain = $%DomainNameInput.text
+	var path = "assets/%s/config" % domain
+	var wd = DirAccess.open(file_path_disp.text)
+	FileAccess.open(
+		wd.get_current_dir() + '/' + MODINFO_NAME, FileAccess.WRITE
+	).store_string(get_mod_info_json())
+	if not wd.dir_exists(path):
+		wd.make_dir_recursive(path)
+	FileAccess.open(
+		wd.get_current_dir() + '/' + path + "/characterclasses.json", FileAccess.WRITE
+	).store_string(get_char_classes_json())
+	FileAccess.open(
+		wd.get_current_dir() + '/' + path + "/traits.json", FileAccess.WRITE
+	).store_string(get_char_traits_json())
+
+func import():
+	pass
+
+
+func get_author_data() -> Array[String]:
+	var rval: Array[String] = []
+	for line in author_lines:
+		rval.append(line.get_author_name())
+	return rval
+
+
+func get_mod_info_json() -> String:
 	var modinfo_data = {
 		"type": "content",
 		"modid": %DomainNameInput.text,
@@ -20,19 +49,18 @@ func export():
 		"description": %DescriptionInput.text,
 		"version": %VersionInput.text,
 	}
-	FileAccess.open(
-		%FilePathDisplay.text + MODINFO_NAME, FileAccess.WRITE
-	).store_string(JSON.stringify(modinfo_data, "  "))
+	return JSON.stringify(modinfo_data)
 
 
-func import():
-	pass
+func get_char_classes_json() -> String:
+	var char_classes = []
+	return JSON.stringify(char_classes)
 
-func get_author_data() -> Array[String]:
-	var rval: Array[String] = []
-	for line in author_lines:
-		rval.append(line.get_author_name())
-	return rval
+
+func get_char_traits_json() -> String:
+	var char_traits = []
+	return JSON.stringify(char_traits)
+
 
 #region Signal Callbacks
 func _on_author_add():
