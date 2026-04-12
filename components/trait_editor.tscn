@@ -4,10 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c0vu2v3c323hr" path="res://assets/Add.svg" id="2_hqfx0"]
 [ext_resource type="Texture2D" uid="uid://c6ytxhblylqec" path="res://assets/Remove.svg" id="3_px7wc"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_4r4qk"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_hqfx0"]
-
 [node name="TraitEditor" type="VBoxContainer" unique_id=1358248419]
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,23 +107,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Trait Type:"
 
-[node name="PositiveBox" type="CheckBox" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=356376674]
+[node name="TraitTypeEdit" type="OptionButton" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=843192422]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-button_group = SubResource("ButtonGroup_4r4qk")
-text = "Positive"
-
-[node name="NeutralBox" type="CheckBox" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=1955707250]
-unique_name_in_owner = true
-layout_mode = 2
-button_group = SubResource("ButtonGroup_hqfx0")
-text = "Neutral"
-
-[node name="NegativeBox" type="CheckBox" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=435419789]
-unique_name_in_owner = true
-layout_mode = 2
-button_group = SubResource("ButtonGroup_hqfx0")
-text = "Negative"
+selected = 0
+item_count = 3
+popup/item_0/text = "Positive"
+popup/item_0/id = 0
+popup/item_1/text = "Mixed"
+popup/item_1/id = 1
+popup/item_2/text = "Negative"
+popup/item_2/id = 2
 
 [node name="Label3" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1088098483]
 layout_mode = 2

@@ -9,6 +9,9 @@ signal del_pressed(id)
 func get_author_name() -> String:
 	return $NameInput.text
 
+func set_author_name(value: String):
+	$NameInput.text = value
+
 func set_delete_enable(enabled:bool = true):
 	del_button.disabled = not enabled
 

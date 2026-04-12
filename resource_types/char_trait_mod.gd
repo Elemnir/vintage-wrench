@@ -8,7 +8,7 @@ const DESCKEY = "trait"
 @export var desc = "<font color=\"#84ff84\">• My new trait </font>"
 @export_enum("postive", "negative", "neutral") var type: String = "positive"
 
-var attributes: Dictionary[String, float] = {}
+var attributes: Dictionary = {}
 
 func get_data_entry() -> Dictionary[String,Variant]:
 	return {
@@ -22,3 +22,12 @@ func get_lang_entry() -> Dictionary[String,String]:
 		FQN_FMT % [NAMEKEY, code]: name,
 		FQN_FMT % [DESCKEY, code]: desc,
 	}
+
+static func load_from_data(data: Dictionary, lang: Dictionary) -> CharacterTraitMod:
+	var rval = CharacterTraitMod.new()
+	rval.code = data["code"]
+	rval.type = data["type"]
+	rval.attributes = data["attributes"]
+	rval.name = lang[FQN_FMT % [NAMEKEY, rval.code]]
+	rval.desc = lang[FQN_FMT % [DESCKEY, rval.code]]
+	return rval

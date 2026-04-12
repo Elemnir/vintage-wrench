@@ -8,12 +8,10 @@ const ATTR_LINE_SCENE = preload("res://components/attribute_line.tscn")
 var _current_trait: CharacterTraitMod = null
 
 @onready var traits_list = %TraitsList
-@onready var trait_code_edit = %TraitCodeEdit
-@onready var trait_name_edit = %TraitNameEdit
-@onready var positive_box = %PositiveBox
-@onready var neutral_box = %NeutralBox
-@onready var negative_box = %NegativeBox
-@onready var trait_desc_edit = %TraitDescEdit
+@onready var trait_code_edit: LineEdit = %TraitCodeEdit
+@onready var trait_name_edit: LineEdit = %TraitNameEdit
+@onready var trait_type_edit: OptionButton = %TraitTypeEdit
+@onready var trait_desc_edit: TextEdit = %TraitDescEdit
 @onready var attr_list = %AttributeList
 
 
@@ -32,16 +30,16 @@ func reload_traits_list():
 		var new = traits_list.create_item(root)
 		new.set_text(0, char_trait.name)
 		new.set_metadata(0, char_trait)
-	
 
-#TODO
+
 func get_trait_type() -> String:
-	return "positive"
+	return trait_type_edit.get_item_text(trait_type_edit.selected).to_lower()
 
 
-#TODO
 func set_trait_type(value: String):
-	pass
+	for idx in range(trait_type_edit.item_count):
+		if value == trait_type_edit.get_item_text(idx).to_lower():
+			trait_type_edit.select(idx)
 
 
 func _load_trait(char_trait: CharacterTraitMod):
@@ -70,7 +68,7 @@ func _update_trait(char_trait: CharacterTraitMod):
 		else:
 			char_trait.attributes.erase(attr.get_char_attr())
 
-		
+
 func _on_traits_list_item_selected():
 	var titem = traits_list.get_selected()
 	print(titem)
@@ -94,7 +92,7 @@ func _on_add_trait_button_pressed():
 	new.set_text(0, new_trait.name)
 	new.set_metadata(0, new_trait)
 	traits.append(new_trait)
-	
+
 
 func _on_del_trait_button_pressed():
 	if _current_trait:
