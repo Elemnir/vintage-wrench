@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c0vu2v3c323hr" path="res://assets/Add.svg" id="2_hqfx0"]
 [ext_resource type="Texture2D" uid="uid://c6ytxhblylqec" path="res://assets/Remove.svg" id="3_px7wc"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_4r4qk"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_hqfx0"]
+
 [node name="TraitEditor" type="VBoxContainer" unique_id=1358248419]
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,60 +22,136 @@ script = ExtResource("1_4r4qk")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TraitsPanel" type="VBoxContainer" parent="HBoxContainer" unique_id=2143427072]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1520334014]
+layout_mode = 2
+
+[node name="TraitsPanel" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=2143427072]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/TraitsPanel" unique_id=2053554202]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/TraitsPanel" unique_id=2053554202]
 layout_mode = 2
 text = "Mod Traits"
+horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/TraitsPanel" unique_id=1818930717]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/TraitsPanel" unique_id=1818930717]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="TraitsList" type="ItemList" parent="HBoxContainer/TraitsPanel/ScrollContainer" unique_id=765879812]
+[node name="TraitsList" type="Tree" parent="HBoxContainer/MarginContainer/TraitsPanel/ScrollContainer" unique_id=925831007]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-auto_width = true
-auto_height = true
-item_count = 3
-item_0/text = "asdf"
-item_1/text = "fffffff"
-item_2/text = "ddddddddddd"
+hide_folding = true
+hide_root = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TraitsPanel" unique_id=1274052425]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/TraitsPanel" unique_id=1274052425]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="AddTraitButton" type="Button" parent="HBoxContainer/TraitsPanel/HBoxContainer" unique_id=1737678762]
+[node name="AddTraitButton" type="Button" parent="HBoxContainer/MarginContainer/TraitsPanel/HBoxContainer" unique_id=1737678762]
 layout_mode = 2
 icon = ExtResource("2_hqfx0")
 
-[node name="DelTraitButton" type="Button" parent="HBoxContainer/TraitsPanel/HBoxContainer" unique_id=1878709574]
+[node name="DelTraitButton" type="Button" parent="HBoxContainer/MarginContainer/TraitsPanel/HBoxContainer" unique_id=1878709574]
 layout_mode = 2
 icon = ExtResource("3_px7wc")
 
-[node name="AttributesPanel" type="VBoxContainer" parent="HBoxContainer" unique_id=1167206757]
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=1668119410]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/AttributesPanel" unique_id=1697810556]
+[node name="AttributesPanel" type="VBoxContainer" parent="HBoxContainer/MarginContainer2" unique_id=1167206757]
 layout_mode = 2
-text = "Character Attribute Options"
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1697810556]
+layout_mode = 2
+text = "Trait Options"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/AttributesPanel" unique_id=956752536]
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=843604528]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1626080419]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer2" unique_id=834618919]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trait Code:"
+
+[node name="TraitCodeEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer2" unique_id=1780846501]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "trait-code"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=261675200]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer3" unique_id=1278389060]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trait Name:"
+
+[node name="TraitNameEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer3" unique_id=939343184]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Trait Name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=611817240]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=1289792520]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trait Type:"
+
+[node name="PositiveBox" type="CheckBox" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=356376674]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_4r4qk")
+text = "Positive"
+
+[node name="NeutralBox" type="CheckBox" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=1955707250]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_hqfx0")
+text = "Neutral"
+
+[node name="NegativeBox" type="CheckBox" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=435419789]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_hqfx0")
+text = "Negative"
+
+[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1088098483]
+layout_mode = 2
+text = "Trait Description:"
+
+[node name="TraitDescEdit" type="TextEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1559921305]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1164172152]
+layout_mode = 2
+text = "Attribute Settings:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=956752536]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AttributeList" type="VBoxContainer" parent="HBoxContainer/AttributesPanel/ScrollContainer" unique_id=832418774]
+[node name="AttributeList" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel/ScrollContainer" unique_id=832418774]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="item_selected" from="HBoxContainer/TraitsPanel/ScrollContainer/TraitsList" to="." method="_on_traits_list_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/TraitsPanel/ScrollContainer/TraitsList" to="." method="_on_traits_list_item_selected"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/TraitsPanel/HBoxContainer/AddTraitButton" to="." method="_on_add_trait_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/TraitsPanel/HBoxContainer/DelTraitButton" to="." method="_on_del_trait_button_pressed"]

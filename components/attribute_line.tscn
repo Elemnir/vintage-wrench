@@ -10,6 +10,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_et85f")
 
+[node name="Button" type="Button" parent="." unique_id=1686039671]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "attributeName"
+alignment = 0
+
 [node name="SpinBox" type="SpinBox" parent="." unique_id=1928726043]
 visible = false
 custom_minimum_size = Vector2(100, 0)
@@ -23,12 +30,5 @@ alignment = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-
-[node name="Button" type="Button" parent="." unique_id=1686039671]
-layout_mode = 2
-size_flags_horizontal = 3
-toggle_mode = true
-text = "attributeName"
-alignment = 0
 
 [connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

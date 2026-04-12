@@ -6,7 +6,7 @@ const MODINFO_NAME = "modinfo.json"
 @onready var author_section = %AuthorSection
 @onready var author_lines: Array[AuthorLine] = [%DefaultAuthorLine]
 @onready var file_path_disp = %FilePathDisplay
-
+@onready var trait_editor = %TraitEditor
 
 func _ready():
 	%DefaultAuthorLine.add_pressed.connect(_on_author_add)
@@ -15,20 +15,28 @@ func _ready():
 
 func export():
 	var domain = $%DomainNameInput.text
-	var path = "assets/%s/config" % domain
+	var cpath = "assets/%s/config" % domain
+	var lpath = "assets/%s/lang" % domain
 	var wd = DirAccess.open(file_path_disp.text)
 	FileAccess.open(
 		wd.get_current_dir() + '/' + MODINFO_NAME, FileAccess.WRITE
 	).store_string(get_mod_info_json())
-	if not wd.dir_exists(path):
-		wd.make_dir_recursive(path)
+	if not wd.dir_exists(cpath):
+		wd.make_dir_recursive(cpath)
+	if not wd.dir_exists(lpath):
+		wd.make_dir_recursive(lpath)
 	FileAccess.open(
-		wd.get_current_dir() + '/' + path + "/characterclasses.json", FileAccess.WRITE
+		wd.get_current_dir() + '/' + cpath + "/characterclasses.json", FileAccess.WRITE
 	).store_string(get_char_classes_json())
 	FileAccess.open(
-		wd.get_current_dir() + '/' + path + "/traits.json", FileAccess.WRITE
+		wd.get_current_dir() + '/' + cpath + "/traits.json", FileAccess.WRITE
 	).store_string(get_char_traits_json())
+	FileAccess.open(
+		wd.get_current_dir() + '/' + lpath + "/en.json", FileAccess.WRITE
+	).store_string(get_lang_json())
 
+
+#TODO
 func import():
 	pass
 
@@ -52,11 +60,19 @@ func get_mod_info_json() -> String:
 	return JSON.stringify(modinfo_data)
 
 
+#TODO
+func get_lang_json() -> String:
+	var lang_dict = {}
+	return JSON.stringify(lang_dict)
+
+
+#TODO
 func get_char_classes_json() -> String:
 	var char_classes = []
 	return JSON.stringify(char_classes)
 
 
+#TODO
 func get_char_traits_json() -> String:
 	var char_traits = []
 	return JSON.stringify(char_traits)

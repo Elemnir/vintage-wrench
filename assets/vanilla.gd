@@ -1,0 +1,25 @@
+extends Resource
+
+const CHAR_ATTRS: Array[String] = [
+	"meleeWeaponsDamage",
+	"armorDurabilityLoss",
+	"armorWalkSpeedAffectedness",
+	"rangedWeaponsDamage",
+	"rangedWeaponsAcc",
+	"bowDrawingStrength",
+	"mechanicalsDamage",
+	"animalLootDropRate",
+	"animalHarvestingTime",
+	"forageDropRate",
+	"wildCropDropRate",
+	"oreDropRate",
+	"vesselContentsDropRate",
+	"rustyGearDropRate",
+	"wholeVesselLootChance",
+	"animalSeekingRange",
+	"temporalGearTLRepairCost",
+	"miningSpeedMul",
+	"maxhealthExtraPoints",
+	"hungerrate",
+	"walkspeed",
+]

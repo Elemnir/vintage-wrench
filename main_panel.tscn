@@ -182,6 +182,7 @@ text = "Custom Traits"
 layout_mode = 2
 
 [node name="TraitEditor" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=1358248419 instance=ExtResource("3_5rs2c")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ClassMods" type="PanelContainer" parent="." unique_id=1617076522]
@@ -189,21 +190,18 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ClassMods" unique_id=1903715892]
+[node name="MarginContainer" type="MarginContainer" parent="ClassMods" unique_id=932197027]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="ClassMods/VBoxContainer" unique_id=25611610]
+[node name="VBoxContainer" type="VBoxContainer" parent="ClassMods/MarginContainer" unique_id=1903715892]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ClassMods/MarginContainer/VBoxContainer" unique_id=25611610]
 layout_mode = 2
 theme_type_variation = &"HeaderLabel"
 text = "Custom Classes"
 
-[node name="HSeparator2" type="HSeparator" parent="ClassMods/VBoxContainer" unique_id=780102315]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="ClassMods/VBoxContainer" unique_id=919526888]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ClassMods/VBoxContainer/ScrollContainer" unique_id=1748840946]
+[node name="HSeparator2" type="HSeparator" parent="ClassMods/MarginContainer/VBoxContainer" unique_id=780102315]
 layout_mode = 2
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=1409104576]
