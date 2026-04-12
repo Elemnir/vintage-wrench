@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://lwqyojgjsn7f" path="res://main_panel.gd" id="1_0oxsh"]
 [ext_resource type="PackedScene" uid="uid://bej07ocd6ksde" path="res://components/author_line.tscn" id="2_pdekv"]
+[ext_resource type="PackedScene" uid="uid://7kqbsumtv4jo" path="res://components/trait_editor.tscn" id="3_5rs2c"]
 
 [node name="MainPanel" type="TabContainer" unique_id=1721346261]
 offset_right = 1152.0
@@ -180,10 +181,7 @@ text = "Custom Traits"
 [node name="HSeparator2" type="HSeparator" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=1168454732]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=687108610]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TraitMods/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1544303928]
+[node name="TraitEditor" parent="TraitMods/MarginContainer/VBoxContainer" unique_id=1358248419 instance=ExtResource("3_5rs2c")]
 layout_mode = 2
 
 [node name="ClassMods" type="PanelContainer" parent="." unique_id=1617076522]

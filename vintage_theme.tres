@@ -3,6 +3,7 @@
 [resource]
 HeaderLabel/base_type = &"Label"
 HeaderLabel/font_sizes/font_size = 32
+ItemList/colors/guide_color = Color(0, 1, 1, 0)
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8

@@ -1,8 +1,77 @@
 [gd_scene format=3 uid="uid://7kqbsumtv4jo"]
 
-[node name="TraitEditor" type="PanelContainer" unique_id=1422194267]
+[ext_resource type="Script" uid="uid://df7jbt3rjrulo" path="res://components/trait_editor.gd" id="1_4r4qk"]
+[ext_resource type="Texture2D" uid="uid://c0vu2v3c323hr" path="res://assets/Add.svg" id="2_hqfx0"]
+[ext_resource type="Texture2D" uid="uid://c6ytxhblylqec" path="res://assets/Remove.svg" id="3_px7wc"]
+
+[node name="TraitEditor" type="VBoxContainer" unique_id=1358248419]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4r4qk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=533628574]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TraitsPanel" type="VBoxContainer" parent="HBoxContainer" unique_id=2143427072]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/TraitsPanel" unique_id=2053554202]
+layout_mode = 2
+text = "Mod Traits"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/TraitsPanel" unique_id=1818930717]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TraitsList" type="ItemList" parent="HBoxContainer/TraitsPanel/ScrollContainer" unique_id=765879812]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_width = true
+auto_height = true
+item_count = 3
+item_0/text = "asdf"
+item_1/text = "fffffff"
+item_2/text = "ddddddddddd"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TraitsPanel" unique_id=1274052425]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="AddTraitButton" type="Button" parent="HBoxContainer/TraitsPanel/HBoxContainer" unique_id=1737678762]
+layout_mode = 2
+icon = ExtResource("2_hqfx0")
+
+[node name="DelTraitButton" type="Button" parent="HBoxContainer/TraitsPanel/HBoxContainer" unique_id=1878709574]
+layout_mode = 2
+icon = ExtResource("3_px7wc")
+
+[node name="AttributesPanel" type="VBoxContainer" parent="HBoxContainer" unique_id=1167206757]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/AttributesPanel" unique_id=1697810556]
+layout_mode = 2
+text = "Character Attribute Options"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/AttributesPanel" unique_id=956752536]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AttributeList" type="VBoxContainer" parent="HBoxContainer/AttributesPanel/ScrollContainer" unique_id=832418774]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="item_selected" from="HBoxContainer/TraitsPanel/ScrollContainer/TraitsList" to="." method="_on_traits_list_item_selected"]
