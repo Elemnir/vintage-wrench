@@ -7,7 +7,7 @@ const ATTR_LINE_SCENE = preload("res://components/attribute_line.tscn")
 
 var _current_trait: CharacterTraitMod = null
 
-@onready var traits_list = %TraitsList
+@onready var trait_list = %TraitsList
 @onready var trait_code_edit: LineEdit = %TraitCodeEdit
 @onready var trait_name_edit: LineEdit = %TraitNameEdit
 @onready var trait_type_edit: OptionButton = %TraitTypeEdit
@@ -16,18 +16,20 @@ var _current_trait: CharacterTraitMod = null
 
 
 func _ready():
-	reload_traits_list()
+	reload_trait_list()
 	for attr in Vanilla.CHAR_ATTRS:
 		var new_line = ATTR_LINE_SCENE.instantiate()
 		new_line.call_deferred("set_char_attr", attr)
 		attr_list.add_child(new_line)
 
 
-func reload_traits_list():
-	traits_list.clear()
-	var root = traits_list.create_item()
+func reload_trait_list():
+	if _current_trait != null:
+		_update_trait(_current_trait)
+	trait_list.clear()
+	var root = trait_list.create_item()
 	for char_trait in traits:
-		var new = traits_list.create_item(root)
+		var new = trait_list.create_item(root)
 		new.set_text(0, char_trait.name)
 		new.set_metadata(0, char_trait)
 
@@ -69,8 +71,8 @@ func _update_trait(char_trait: CharacterTraitMod):
 			char_trait.attributes.erase(attr.get_char_attr())
 
 
-func _on_traits_list_item_selected():
-	var titem = traits_list.get_selected()
+func _on_trait_list_item_selected():
+	var titem = trait_list.get_selected()
 	print(titem)
 	if titem == null:
 		for attr_line in attr_list.get_children():
@@ -79,16 +81,15 @@ func _on_traits_list_item_selected():
 		return
 	var char_trait = titem.get_metadata(0)
 	if _current_trait != null and char_trait != _current_trait:
-		titem.set_text(0, trait_name_edit.text)
 		_update_trait(_current_trait)
 	_load_trait(char_trait)		
 	_current_trait = char_trait
 
 
 func _on_add_trait_button_pressed():
-	var root = traits_list.get_root()
+	var root = trait_list.get_root()
 	var new_trait = CharacterTraitMod.new()
-	var new = traits_list.create_item(root)
+	var new = trait_list.create_item(root)
 	new.set_text(0, new_trait.name)
 	new.set_metadata(0, new_trait)
 	traits.append(new_trait)
@@ -96,7 +97,12 @@ func _on_add_trait_button_pressed():
 
 func _on_del_trait_button_pressed():
 	if _current_trait:
-		traits_list.get_selected().free()
+		trait_list.get_selected().free()
 		traits.erase(_current_trait)
 		_current_trait = null
 		
+
+func _on_trait_name_edit_text_changed(new_text):
+	var titem = trait_list.get_selected()
+	if titem != null:
+		titem.set_text(0, new_text)

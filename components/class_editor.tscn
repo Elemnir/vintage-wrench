@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://be1plnqm3breb"]
+
+[ext_resource type="Script" uid="uid://b3odkgoftenqp" path="res://components/class_editor.gd" id="1_dxy3w"]
+[ext_resource type="Texture2D" uid="uid://c0vu2v3c323hr" path="res://assets/Add.svg" id="2_th05d"]
+[ext_resource type="Texture2D" uid="uid://c6ytxhblylqec" path="res://assets/Remove.svg" id="3_ejmpv"]
+
+[node name="ClassEditor" type="VBoxContainer" unique_id=1358248419]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dxy3w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=533628574]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1520334014]
+layout_mode = 2
+
+[node name="ClassPanel" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=2143427072]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/ClassPanel" unique_id=2053554202]
+layout_mode = 2
+text = "Mod Classes"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/ClassPanel" unique_id=1818930717]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ClassList" type="Tree" parent="HBoxContainer/MarginContainer/ClassPanel/ScrollContainer" unique_id=925831007]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+hide_folding = true
+hide_root = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/ClassPanel" unique_id=1274052425]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="AddClassButton" type="Button" parent="HBoxContainer/MarginContainer/ClassPanel/HBoxContainer" unique_id=1737678762]
+layout_mode = 2
+icon = ExtResource("2_th05d")
+
+[node name="DelClassButton" type="Button" parent="HBoxContainer/MarginContainer/ClassPanel/HBoxContainer" unique_id=1878709574]
+layout_mode = 2
+icon = ExtResource("3_ejmpv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=1668119410]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClassConfPanel" type="VBoxContainer" parent="HBoxContainer/MarginContainer2" unique_id=1167206757]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/ClassConfPanel" unique_id=1697810556]
+layout_mode = 2
+text = "Class Options"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/MarginContainer2/ClassConfPanel" unique_id=843604528]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel" unique_id=385961125]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2" unique_id=1326999501]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer" unique_id=834618919]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Class Code:"
+
+[node name="ClassCodeEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer" unique_id=1780846501]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "class-code"
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer" unique_id=1278389060]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Class Name:"
+
+[node name="ClassNameEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer" unique_id=939343184]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Class Name"
+
+[node name="ClassEnabledCheck" type="CheckBox" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer" unique_id=1037907456]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Enable Class?"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2" unique_id=2118884077]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer2" unique_id=1088098483]
+layout_mode = 2
+text = "Class Description:"
+
+[node name="ClassDescEdit" type="TextEdit" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer2" unique_id=1559921305]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel" unique_id=176544642]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer" unique_id=2026899460]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer/VBoxContainer" unique_id=1164172152]
+layout_mode = 2
+text = "Traits:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer/VBoxContainer" unique_id=956752536]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TraitList" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=832418774]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer" unique_id=731778877]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer/VBoxContainer2" unique_id=655673531]
+layout_mode = 2
+text = "Gear:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer/VBoxContainer2" unique_id=1172452522]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GearList" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer/VBoxContainer2/ScrollContainer" unique_id=1081023998]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/ClassPanel/ScrollContainer/ClassList" to="." method="_on_class_list_item_selected"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/ClassPanel/HBoxContainer/AddClassButton" to="." method="_on_add_class_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/ClassPanel/HBoxContainer/DelClassButton" to="." method="_on_del_class_button_pressed"]
+[connection signal="text_changed" from="HBoxContainer/MarginContainer2/ClassConfPanel/HBoxContainer2/VBoxContainer/ClassNameEdit" to="." method="_on_class_name_edit_text_changed"]

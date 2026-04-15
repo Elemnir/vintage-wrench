@@ -71,43 +71,41 @@ horizontal_alignment = 1
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=843604528]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1626080419]
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=880103318]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer2" unique_id=834618919]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4" unique_id=442170542]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer" unique_id=834618919]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Trait Code:"
 
-[node name="TraitCodeEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer2" unique_id=1780846501]
+[node name="TraitCodeEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer" unique_id=1780846501]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 placeholder_text = "trait-code"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=261675200]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer3" unique_id=1278389060]
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer" unique_id=1278389060]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Trait Name:"
 
-[node name="TraitNameEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer3" unique_id=939343184]
+[node name="TraitNameEdit" type="LineEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer" unique_id=939343184]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 placeholder_text = "Trait Name"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=611817240]
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=1289792520]
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer" unique_id=1289792520]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Trait Type:"
 
-[node name="TraitTypeEdit" type="OptionButton" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer" unique_id=843192422]
+[node name="TraitTypeEdit" type="OptionButton" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer" unique_id=843192422]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
@@ -120,14 +118,19 @@ popup/item_1/id = 1
 popup/item_2/text = "Negative"
 popup/item_2/id = 2
 
-[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1088098483]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4" unique_id=147111777]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer2" unique_id=1088098483]
 layout_mode = 2
 text = "Trait Description:"
 
-[node name="TraitDescEdit" type="TextEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1559921305]
+[node name="TraitDescEdit" type="TextEdit" parent="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer2" unique_id=1559921305]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Label4" type="Label" parent="HBoxContainer/MarginContainer2/AttributesPanel" unique_id=1164172152]
 layout_mode = 2
@@ -143,6 +146,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="item_selected" from="HBoxContainer/MarginContainer/TraitsPanel/ScrollContainer/TraitsList" to="." method="_on_traits_list_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/TraitsPanel/ScrollContainer/TraitsList" to="." method="_on_trait_list_item_selected"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TraitsPanel/HBoxContainer/AddTraitButton" to="." method="_on_add_trait_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/TraitsPanel/HBoxContainer/DelTraitButton" to="." method="_on_del_trait_button_pressed"]
+[connection signal="text_changed" from="HBoxContainer/MarginContainer2/AttributesPanel/HBoxContainer4/VBoxContainer/TraitNameEdit" to="." method="_on_trait_name_edit_text_changed"]
