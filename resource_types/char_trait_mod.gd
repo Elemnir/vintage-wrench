@@ -1,5 +1,5 @@
 class_name CharacterTraitMod
-extends BaseModResource
+extends ModObjectBase
 
 const NAMEKEY = "traitname"
 const DESCKEY = "trait"

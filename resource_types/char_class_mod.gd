@@ -1,5 +1,5 @@
 class_name CharacterClassMod
-extends BaseModResource
+extends ModObjectBase
 
 const NAMEKEY = "characterclass"
 const DESCKEY = "characterdesc"

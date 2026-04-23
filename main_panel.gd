@@ -90,7 +90,7 @@ func get_mod_info_json() -> String:
 		"description": %DescriptionInput.text,
 		"version": %VersionInput.text,
 	}
-	return JSON.stringify(modinfo_data)
+	return JSON.stringify(modinfo_data, "  ")
 
 
 func get_lang_json() -> String:
@@ -99,21 +99,21 @@ func get_lang_json() -> String:
 		lang_dict.merge(char_trait.get_lang_entry())
 	for char_class in class_editor.classes:
 		lang_dict.merge(char_class.get_lang_entry())
-	return JSON.stringify(lang_dict)
+	return JSON.stringify(lang_dict, "  ")
 
 
 func get_char_classes_json() -> String:
 	var char_classes = []
 	for char_class in class_editor.classes:
 		char_classes.append(char_class.get_data_entry())
-	return JSON.stringify(char_classes)
+	return JSON.stringify(char_classes, "  ")
 
 
 func get_char_traits_json() -> String:
 	var char_traits = []
 	for char_trait in trait_editor.traits:
 		char_traits.append(char_trait.get_data_entry())
-	return JSON.stringify(char_traits)
+	return JSON.stringify(char_traits, "  ")
 
 
 func load_mod_info_json(data: Dictionary):

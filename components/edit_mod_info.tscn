@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cypc05lxfoh13"]
+
+[ext_resource type="Script" uid="uid://d2drafri332cj" path="res://components/edit_mod_info.gd" id="1_it2ma"]
+
+[node name="EditModInfo" type="VBoxContainer" unique_id=409522366]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it2ma")
+
+[node name="HBoxContainer" type="HFlowContainer" parent="." unique_id=248606961]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=1708304885]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Mod ID/Domain Name"
+
+[node name="DomainNameInput" type="LineEdit" parent="HBoxContainer" unique_id=1592331700]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Mod Domain"
+
+[node name="HSeparator9" type="HSeparator" parent="." unique_id=467972496]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=826490296]
+layout_mode = 2
+
+[node name="Label3" type="RichTextLabel" parent="HFlowContainer" unique_id=98897576]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "Mod Version    [url=\"https://semver.org\"]Formatting Help[/url]
+"
+fit_content = true
+
+[node name="VersionInput" type="LineEdit" parent="HFlowContainer" unique_id=528754592]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "\"1.1.1\""
+
+[node name="HSeparator10" type="HSeparator" parent="." unique_id=499048690]
+layout_mode = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="." unique_id=21365135]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="HFlowContainer2" unique_id=352440957]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Human-Readable Mod Name"
+
+[node name="PrettyNameInput" type="LineEdit" parent="HFlowContainer2" unique_id=182016866]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Mod Name"
+
+[node name="HSeparator11" type="HSeparator" parent="." unique_id=1882982172]
+layout_mode = 2
+
+[node name="VFlowContainer" type="VBoxContainer" parent="." unique_id=441122935]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label5" type="Label" parent="VFlowContainer" unique_id=1845501875]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Mod Description"
+
+[node name="DescriptionInput" type="LineEdit" parent="VFlowContainer" unique_id=1026103377]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Mod Description"
+
+[node name="HSeparator12" type="HSeparator" parent="." unique_id=329916772]
+layout_mode = 2
+
+[node name="AuthorSection" type="VBoxContainer" parent="." unique_id=1804648346]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AuthorSection" unique_id=1298152641]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Authors"
