@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://lpuiqowhunv0"]
 
-[ext_resource type="Script" uid="uid://lwqyojgjsn7f" path="res://main_panel.gd" id="1_0oxsh"]
-[ext_resource type="PackedScene" uid="uid://bej07ocd6ksde" path="res://components/author_line.tscn" id="2_pdekv"]
-[ext_resource type="PackedScene" uid="uid://7kqbsumtv4jo" path="res://components/trait_editor.tscn" id="3_5rs2c"]
-[ext_resource type="PackedScene" uid="uid://be1plnqm3breb" path="res://components/class_editor.tscn" id="4_b7y1i"]
+[ext_resource type="Script" uid="uid://lwqyojgjsn7f" path="res://legacy/main_panel.gd" id="1_0oxsh"]
+[ext_resource type="PackedScene" uid="uid://bej07ocd6ksde" path="res://edit_view_scenes/mod_info/author_line.tscn" id="2_pdekv"]
+[ext_resource type="PackedScene" uid="uid://7kqbsumtv4jo" path="res://legacy/trait_editor.tscn" id="3_5rs2c"]
+[ext_resource type="PackedScene" uid="uid://be1plnqm3breb" path="res://legacy/class_editor.tscn" id="4_b7y1i"]
 
 [node name="MainPanel" type="TabContainer" unique_id=1721346261]
 offset_right = 1152.0

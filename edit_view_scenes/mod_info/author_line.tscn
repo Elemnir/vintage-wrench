@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bej07ocd6ksde"]
 
 [ext_resource type="Texture2D" uid="uid://c0vu2v3c323hr" path="res://assets/icons/Add.svg" id="1_fyaj1"]
-[ext_resource type="Script" uid="uid://cskifyrgfd27g" path="res://components/author_line.gd" id="1_hd6k3"]
+[ext_resource type="Script" uid="uid://cskifyrgfd27g" path="res://edit_view_scenes/mod_info/author_line.gd" id="1_hd6k3"]
 [ext_resource type="Texture2D" uid="uid://c6ytxhblylqec" path="res://assets/icons/Remove.svg" id="2_hd6k3"]
 
 [node name="AuthorLine" type="HFlowContainer" unique_id=304042695]

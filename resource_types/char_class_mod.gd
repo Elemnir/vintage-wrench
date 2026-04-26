@@ -12,6 +12,7 @@ const DESCKEY = "characterdesc"
 var traits: Array = []
 var gear: Array = []
 
+
 func get_data_entry() -> Dictionary[String,Variant]:
 	return {
 		"enabled": enabled,
@@ -20,11 +21,13 @@ func get_data_entry() -> Dictionary[String,Variant]:
 		"gear": _render_gear(),
 	}
 
+
 func get_lang_entry() -> Dictionary[String,String]:
 	return {
 		FQN_FMT % [NAMEKEY, code]: name,
 		FQN_FMT % [DESCKEY, code]: desc,
 	}
+
 
 func _render_gear() -> Array:
 	var rval = []
@@ -34,7 +37,16 @@ func _render_gear() -> Array:
 			"code": item,
 		})
 	return rval
-	
+
+
+static func get_edit_scene() -> PackedScene:
+	return preload("res://components/edit_class_view.tscn")
+
+
+static func get_file_path() -> String:
+	return "/config/characterclasses.json"
+
+
 static func load_from_data(data: Dictionary, lang: Dictionary) -> CharacterClassMod:
 	var rval = CharacterClassMod.new()
 	rval.enabled = data["enabled"]

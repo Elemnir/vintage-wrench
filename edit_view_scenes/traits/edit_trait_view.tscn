@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://l3rxlvpld4pi"]
+
+[ext_resource type="Script" uid="uid://bsfvpx8amobuc" path="res://edit_view_scenes/traits/edit_trait_view.gd" id="1_8kqqx"]
+[ext_resource type="PackedScene" uid="uid://pges5im8e5pm" path="res://edit_view_scenes/traits/attribute_manager.tscn" id="2_2q7cn"]
+
+[node name="EditTraitView" type="VBoxContainer" unique_id=702681790]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8kqqx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=861040309]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=697881470]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HBoxContainer/VBoxContainer" unique_id=1805084143]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HFlowContainer" unique_id=1750898240]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trait Code:"
+
+[node name="TraitCodeEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HFlowContainer" unique_id=1440939122]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "trait-code"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=1627777192]
+layout_mode = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="HBoxContainer/VBoxContainer" unique_id=126894746]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/HFlowContainer2" unique_id=1996626628]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trait Name:"
+
+[node name="TraitNameEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HFlowContainer2" unique_id=493376384]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+placeholder_text = "Trait Name"
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=1951926833]
+layout_mode = 2
+
+[node name="HFlowContainer3" type="HFlowContainer" parent="HBoxContainer/VBoxContainer" unique_id=1270553670]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer/HFlowContainer3" unique_id=1176126881]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Trait Type:"
+
+[node name="TraitTypeEdit" type="OptionButton" parent="HBoxContainer/VBoxContainer/HFlowContainer3" unique_id=1956418595]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Positive"
+popup/item_0/id = 0
+popup/item_1/text = "Mixed"
+popup/item_1/id = 1
+popup/item_2/text = "Negative"
+popup/item_2/id = 2
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=1518420163]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1246779681]
+layout_mode = 2
+text = "Trait Description:"
+
+[node name="TraitDescEdit" type="TextEdit" parent="HBoxContainer/VBoxContainer" unique_id=1748714785]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=487635054]
+layout_mode = 2
+
+[node name="AttributeManager" parent="HBoxContainer" unique_id=2110854417 instance=ExtResource("2_2q7cn")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HFlowContainer/TraitCodeEdit" to="." method="_on_trait_code_edit_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HFlowContainer2/TraitNameEdit" to="." method="_on_trait_name_edit_text_changed"]

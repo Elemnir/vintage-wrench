@@ -10,6 +10,7 @@ const DESCKEY = "trait"
 
 var attributes: Dictionary = {}
 
+
 func get_data_entry() -> Dictionary[String,Variant]:
 	return {
 		"code": code,
@@ -17,11 +18,21 @@ func get_data_entry() -> Dictionary[String,Variant]:
 		"attributes": attributes,
 	}
 
+
 func get_lang_entry() -> Dictionary[String,String]:
 	return {
 		FQN_FMT % [NAMEKEY, code]: name,
 		FQN_FMT % [DESCKEY, code]: desc,
 	}
+
+
+static func get_edit_scene() -> PackedScene:
+	return preload("res://components/edit_trait_view.tscn")
+
+
+static func get_file_path() -> String:
+	return "/config/traits.json"
+
 
 static func load_from_data(data: Dictionary, lang: Dictionary) -> CharacterTraitMod:
 	var rval = CharacterTraitMod.new()

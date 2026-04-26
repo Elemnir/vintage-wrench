@@ -3,7 +3,7 @@ extends EditViewBase
 
 const AUTHOR_SCENE = preload("res://components/author_line.tscn")
 
-var _info: ModInfo
+var _info: ModInfo = ModInfo.new()
 
 @onready var author_section = %AuthorSection
 @onready var author_lines: Array[AuthorLine] = []
@@ -17,7 +17,11 @@ func get_author_data() -> Array[String]:
 	for line in author_lines:
 		rval.append(line.get_author_name())
 	return rval
-	
+
+
+func get_display_name() -> String:
+	return "Mod Info"
+
 
 func get_loaded_object():
 	_info.code = %DomainNameInput.text
@@ -26,7 +30,7 @@ func get_loaded_object():
 	_info.desc = %DescriptionInput.text
 	_info.authors = get_author_data()
 	return _info
-	
+
 
 func load_using_object(obj: ModObjectBase):
 	_info = obj as ModInfo

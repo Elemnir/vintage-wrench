@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ynjbas2aki7e"]
 
-[ext_resource type="Script" uid="uid://cyacimpxhw1lr" path="res://components/gear_manager.gd" id="1_qpo7a"]
+[ext_resource type="Script" uid="uid://cyacimpxhw1lr" path="res://edit_view_scenes/classes/gear_manager.gd" id="1_qpo7a"]
 
 [node name="GearManager" type="VSplitContainer" unique_id=1734422183]
 anchors_preset = 15

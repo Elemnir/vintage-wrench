@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://pges5im8e5pm"]
+
+[ext_resource type="Script" uid="uid://de84kg0wfr8ka" path="res://edit_view_scenes/traits/attribute_manager.gd" id="1_beby3"]
+
+[node name="AttributeManager" type="VSplitContainer" unique_id=2110854417]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offsets = PackedInt32Array(-100)
+split_offset = -100
+script = ExtResource("1_beby3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=12657093]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=663761810]
+layout_mode = 2
+text = "Modified Attributes:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1004743333]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="SelectedAttributes" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1255139830]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=359492134]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=87131461]
+layout_mode = 2
+text = "Available Attributes:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer2" unique_id=1814673059]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="AvailableAttributes" type="VBoxContainer" parent="VBoxContainer2/ScrollContainer" unique_id=947001780]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

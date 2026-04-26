@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7kqbsumtv4jo"]
 
-[ext_resource type="Script" uid="uid://df7jbt3rjrulo" path="res://components/trait_editor.gd" id="1_4r4qk"]
+[ext_resource type="Script" uid="uid://df7jbt3rjrulo" path="res://legacy/trait_editor.gd" id="1_4r4qk"]
 [ext_resource type="Texture2D" uid="uid://c0vu2v3c323hr" path="res://assets/icons/Add.svg" id="2_hqfx0"]
 [ext_resource type="Texture2D" uid="uid://c6ytxhblylqec" path="res://assets/icons/Remove.svg" id="3_px7wc"]
 

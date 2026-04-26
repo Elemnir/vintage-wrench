@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cypc05lxfoh13"]
 
-[ext_resource type="Script" uid="uid://d2drafri332cj" path="res://components/edit_mod_info.gd" id="1_it2ma"]
+[ext_resource type="Script" uid="uid://d2drafri332cj" path="res://edit_view_scenes/mod_info/edit_mod_info.gd" id="1_it2ma"]
 
 [node name="EditModInfo" type="VBoxContainer" unique_id=409522366]
 anchors_preset = 15

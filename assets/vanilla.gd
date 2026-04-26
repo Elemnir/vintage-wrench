@@ -53,10 +53,6 @@ const CHAR_TRAITS: Array[String] = [
 ]
 
 const CLOTHES: Array[String] = [
-
-	"aculinaryartillery:clothes-head-c-hat",
-	"aculinaryartillery:clothes-head-c-hat1",
-	"aculinaryartillery:clothes-head-c-hat2",
 	"clothes-arm-acacia",
 	"clothes-arm-acrobat",
 	"clothes-arm-bamboo",

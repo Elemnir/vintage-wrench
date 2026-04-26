@@ -1,10 +1,12 @@
 class_name ModInfo
 extends ModObjectBase
 
+
 @export var name: String
 @export var desc: String
 @export var version: String
 @export var authors: Array[String]
+
 
 func get_data_entry() -> Dictionary[String,Variant]:
 	return {
@@ -14,10 +16,18 @@ func get_data_entry() -> Dictionary[String,Variant]:
 		"version": version,
 		"authors": authors
 	}
-	
+
 
 func get_lang_entry() -> Dictionary[String,String]:
 	return {}
+
+
+static func get_edit_scene() -> PackedScene:
+	return preload("res://components/edit_mod_info.tscn")
+
+
+static func get_file_path() -> String:
+	return "/modinfo.json"
 
 
 static func load_from_data(data: Dictionary[String,Variant]) -> ModInfo:
