@@ -13,6 +13,7 @@ func get_data_entry() -> Dictionary[String,Variant]:
 		"modid": code,
 		"name": name,
 		"description": desc,
+		"type": "content",
 		"version": version,
 		"authors": authors
 	}
