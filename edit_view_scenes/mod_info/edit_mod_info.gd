@@ -1,7 +1,7 @@
 class_name EditModInfo
 extends EditViewBase
 
-const AUTHOR_SCENE = preload("res://components/author_line.tscn")
+const AUTHOR_SCENE = preload("res://edit_view_scenes/mod_info/author_line.tscn")
 
 var _info: ModInfo = ModInfo.new()
 
@@ -9,7 +9,8 @@ var _info: ModInfo = ModInfo.new()
 @onready var author_lines: Array[AuthorLine] = []
 
 func _ready():
-	pass
+	for author in author_lines:
+		author_section.add_child(author)
 
 
 func get_author_data() -> Array[String]:
@@ -41,6 +42,8 @@ func load_using_object(obj: ModObjectBase):
 	for author in _info.authors:
 		var new = add_author()
 		new.set_author_name(author)
+	code_changed.emit(_info.code)
+	name_changed.emit(_info.name)
 
 
 func add_author() -> AuthorLine:
@@ -51,7 +54,8 @@ func add_author() -> AuthorLine:
 	if len(author_lines) > 1:
 		for line in author_lines:
 			line.call_deferred("set_delete_enable", true)
-	author_section.add_child(new_line)
+	if author_section:
+		author_section.add_child(new_line)
 	return new_line
 
 

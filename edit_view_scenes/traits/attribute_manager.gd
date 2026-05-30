@@ -1,7 +1,7 @@
 class_name AttributeManager
 extends VSplitContainer
 
-const ATTR_SCENE = preload("res://components/attribute_line.tscn")
+const ATTR_SCENE = preload("res://edit_view_scenes/traits/attribute_line.tscn")
 
 var _active_attributes: Dictionary[Button, AttributeLine]
 
@@ -33,7 +33,7 @@ func make_attributes_available(attr_list: Array[String]):
 		available_attributes.add_child(make_toggle_button(attr))
 
 
-func set_attribute_modifiers(attrs: Dictionary[String, float]):
+func set_attribute_modifiers(attrs: Dictionary):
 	for attr_btn in available_attributes.get_children():
 		if attrs.has(attr_btn.text):
 			_set_attribute_active(attr_btn, attrs[attr_btn.text])

@@ -27,7 +27,7 @@ func get_lang_entry() -> Dictionary[String,String]:
 
 
 static func get_edit_scene() -> PackedScene:
-	return preload("res://components/edit_trait_view.tscn")
+	return preload("res://edit_view_scenes/traits/edit_trait_view.tscn")
 
 
 static func get_file_path() -> String:

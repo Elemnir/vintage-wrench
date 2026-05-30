@@ -30,6 +30,8 @@ func load_using_object(obj: ModObjectBase):
 	trait_desc_edit.text = _trait.desc
 	set_trait_type(_trait.type)
 	attribute_manager.set_attribute_modifiers(_trait.attributes)
+	code_changed.emit(_trait.code)
+	name_changed.emit(_trait.name)
 
 
 func get_trait_type() -> String:

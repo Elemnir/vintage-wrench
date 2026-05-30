@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://6eei0q6omnkk"]
 
 [ext_resource type="Script" uid="uid://bahstxiot64qc" path="res://edit_view_scenes/classes/edit_class_view.gd" id="1_vh5kq"]
-[ext_resource type="PackedScene" uid="uid://ynjbas2aki7e" path="res://edit_view_scenes/classes/gear_manager.tscn" id="2_ij7gu"]
+[ext_resource type="PackedScene" uid="uid://ci3k2yde0bfxl" path="res://edit_view_scenes/generics/selection_manager.tscn" id="2_ujy4s"]
 
-[node name="EditClassView" type="VBoxContainer" unique_id=1809779787]
+[node name="EditClassView" type="MarginContainer" unique_id=404464199]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,62 +11,75 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vh5kq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1147955785]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1809779787]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1147955785]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=901225021]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=901225021]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HFlowContainer" type="HFlowContainer" parent="HBoxContainer/VBoxContainer" unique_id=1758770983]
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1758770983]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HFlowContainer" unique_id=874504717]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HFlowContainer" unique_id=874504717]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Class Code:"
 
-[node name="ClassCodeEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HFlowContainer" unique_id=1448212602]
+[node name="ClassCodeEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer/HFlowContainer" unique_id=1448212602]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 placeholder_text = "class-code"
 
-[node name="HFlowContainer2" type="HFlowContainer" parent="HBoxContainer/VBoxContainer" unique_id=2134375106]
+[node name="HFlowContainer2" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2134375106]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/HFlowContainer2" unique_id=239333571]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HFlowContainer2" unique_id=239333571]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Class Name:"
 
-[node name="ClassNameEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HFlowContainer2" unique_id=803834310]
+[node name="ClassNameEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer/HFlowContainer2" unique_id=803834310]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 placeholder_text = "Class Name"
 
-[node name="ClassEnabledCheck" type="CheckBox" parent="HBoxContainer/VBoxContainer" unique_id=1938036459]
+[node name="ClassEnabledCheck" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1938036459]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Enable Class?"
 
-[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=361216481]
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=361216481]
 layout_mode = 2
 text = "Class Description:"
 
-[node name="ClassDescEdit" type="TextEdit" parent="HBoxContainer/VBoxContainer" unique_id=1815952840]
+[node name="ClassDescEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1815952840]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=509722008]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=509722008]
 layout_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1324564465]
+[node name="TraitManager" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1734422183 instance=ExtResource("2_ujy4s")]
+unique_name_in_owner = true
+layout_mode = 2
+split_offsets = PackedInt32Array(-50)
+split_offset = -50
+available_text = "Available Traits:"
+selected_text = "Selected Traits:"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1324564465]
 layout_mode = 2
 
-[node name="GearManager" parent="HBoxContainer" unique_id=1734422183 instance=ExtResource("2_ij7gu")]
+[node name="GearManager" parent="VBoxContainer/HBoxContainer" unique_id=1132448386 instance=ExtResource("2_ujy4s")]
+unique_name_in_owner = true
 layout_mode = 2
+available_text = "Available Gear:"
+selected_text = "Equipped Gear:"

@@ -1,5 +1,5 @@
 @abstract class_name EditViewBase
-extends VBoxContainer
+extends MarginContainer
 
 @warning_ignore("unused_signal") signal code_changed(new_code: String)
 @warning_ignore("unused_signal") signal name_changed(new_name: String)

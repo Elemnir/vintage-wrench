@@ -1,0 +1,28 @@
+[
+  {
+    "code": "special-boy",
+    "enabled": true,
+    "gear": [
+      {
+        "code": "clothes-arm-acrobat",
+        "type": "item"
+      },
+      {
+        "code": "clothes-lowerbody-noble-pants",
+        "type": "item"
+      },
+      {
+        "code": "clothes-nadiya-head-beekeeper",
+        "type": "item"
+      },
+      {
+        "code": "clothes-upperbody-clockmaker-shirt",
+        "type": "item"
+      }
+    ],
+    "traits": [
+      "clothier",
+      "farsighted"
+    ]
+  }
+]

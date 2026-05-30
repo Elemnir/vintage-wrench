@@ -1,0 +1,10 @@
+{
+  "authors": [
+    "Kark",
+    "RobotApologist"
+  ],
+  "description": "I'm testing mods over here!",
+  "modid": "my-test-mod",
+  "name": "A Test Mod",
+  "version": "0.0.1"
+}

@@ -19,6 +19,21 @@ config/icon="res://icon.svg"
 
 Vanilla="*uid://bfnkustrm2rpn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://docs/": "orange",
+"res://edit_view_scenes/": "yellow",
+"res://resource_types/": "green",
+"res://tests/": "gray"
+}
+
 [gui]
 
 theme/custom="uid://dvc2bjjf3bk74"

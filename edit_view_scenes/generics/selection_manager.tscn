@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ci3k2yde0bfxl"]
+
+[ext_resource type="Script" uid="uid://chnkmi4ati1eb" path="res://edit_view_scenes/generics/selection_manager.gd" id="1_0f6rp"]
+
+[node name="SelectionManager" type="VSplitContainer" unique_id=1734422183]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(-100)
+split_offset = -100
+script = ExtResource("1_0f6rp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1160156235]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SelectedLabel" type="Label" parent="VBoxContainer" unique_id=463431685]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Selected:"
+
+[node name="SelectedOptions" type="Tree" parent="VBoxContainer" unique_id=1151586732]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+select_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1799389459]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AvailableLabel" type="Label" parent="VBoxContainer2" unique_id=585729324]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Available:"
+
+[node name="AvailableOptions" type="Tree" parent="VBoxContainer2" unique_id=1801552449]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+select_mode = 1
+
+[connection signal="button_clicked" from="VBoxContainer/SelectedOptions" to="." method="_on_selected_options_button_clicked"]
+[connection signal="item_activated" from="VBoxContainer/SelectedOptions" to="." method="_on_selected_options_item_activated"]
+[connection signal="button_clicked" from="VBoxContainer2/AvailableOptions" to="." method="_on_available_options_button_clicked"]
+[connection signal="item_activated" from="VBoxContainer2/AvailableOptions" to="." method="_on_available_options_item_activated"]

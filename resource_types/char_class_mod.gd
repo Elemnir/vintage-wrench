@@ -40,7 +40,7 @@ func _render_gear() -> Array:
 
 
 static func get_edit_scene() -> PackedScene:
-	return preload("res://components/edit_class_view.tscn")
+	return preload("res://edit_view_scenes/classes/edit_class_view.tscn")
 
 
 static func get_file_path() -> String:

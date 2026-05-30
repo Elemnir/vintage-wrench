@@ -1,0 +1,8 @@
+{
+  "game:characterclass-special-boy": "Special Boy",
+  "game:characterdesc-special-boy": "<font color=\"#99c9f9\">My special boy class.</font>",
+  "game:trait-rusty": "<font color=\"#84ff84\">• Find rusty things </font>",
+  "game:trait-speedy": "<font color=\"#84ff84\">• My new trait </font>",
+  "game:traitname-rusty": "Rusty",
+  "game:traitname-speedy": "Speedy"
+}

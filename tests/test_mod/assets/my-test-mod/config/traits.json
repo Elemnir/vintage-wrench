@@ -1,0 +1,17 @@
+[
+  {
+    "attributes": {
+      "rustyGearDropRate": 2.0
+    },
+    "code": "rusty",
+    "type": "positive"
+  },
+  {
+    "attributes": {
+      "hungerrate": 2.0,
+      "walkspeed": 3.0
+    },
+    "code": "speedy",
+    "type": "positive"
+  }
+]
